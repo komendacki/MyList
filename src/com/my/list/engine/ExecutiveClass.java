@@ -1,5 +1,6 @@
 package com.my.list.engine;
 
+import com.my.list.model.Iterator;
 import com.my.list.model.MyList;
 
 /**
@@ -17,6 +18,13 @@ public class ExecutiveClass {
 
         System.out.println(list.containts(10));
         System.out.println(list.containts(50));
+
+        Iterator iterator = new Iterator(list);
+
+        while(iterator.hasNext())
+        {
+            System.out.println(iterator.next());
+        }
 
     }
 }

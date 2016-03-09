@@ -12,8 +12,8 @@ public class MyList<T> {
     }
 
     private int count;
-    private Node head;
-    private Node tail;
+    Node head;
+    Node tail;
     private boolean readOnly;
 
     public void add(T item)
