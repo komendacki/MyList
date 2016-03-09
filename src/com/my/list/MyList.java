@@ -65,7 +65,17 @@ public class MyList<T> {
 
     public void copyTo(T[] array, int arrayIndex)
     {
-        throw new NotImplementedException();
+        if (count > array.length - arrayIndex - 1) throw new IndexOutOfBoundsException();
+
+        Node current = head;
+        int i = arrayIndex;
+
+        while (current != null)
+        {
+            array[i] = (T) current.value;
+            i++;
+            current = current.next;
+        }
     }
 
     public boolean isReadOnly()
@@ -92,7 +102,7 @@ public class MyList<T> {
                 {
                     previous.next = next;
                 }
-
+                count--;
                 return true;
             }
             previous = current;
