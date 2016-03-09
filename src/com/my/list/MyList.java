@@ -7,16 +7,41 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
  */
 public class MyList<T> {
 
-    public int count;
+    public MyList()
+    {
+        this.count = 0;
+    }
+
+    private int count;
+    public Node head;
+    public Node tail;
 
     public void add(T item)
     {
-        throw new NotImplementedException();
+        Node node = new Node(item);
+        if (count == 0)
+        {
+            this.head = node;
+            this.tail = node;
+        }
+        else
+        {
+            this.tail.next = node;
+            this.tail = node;
+        }
+
+        count++;
+    }
+
+    public int size()
+    {
+        return this.count;
     }
 
     public void clear()
     {
-        throw new NotImplementedException();
+        this.head = null;
+        this.tail = null;
     }
 
     public boolean containts(T item)
