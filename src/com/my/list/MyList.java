@@ -59,7 +59,7 @@ public class MyList<T> {
 
             current = current.next;
         }
-        
+
         return false;
     }
 
@@ -75,7 +75,30 @@ public class MyList<T> {
 
     public boolean remove(T item)
     {
-        throw new NotImplementedException();
+        Node current = this.head;
+        Node previous = null;
+
+        while (current != null)
+        {
+            Node next = current.next;
+            if (current.value == item)
+            {
+                if (previous == null)
+                {
+                    head = next;
+                }
+
+                else
+                {
+                    previous.next = next;
+                }
+
+                return true;
+            }
+            previous = current;
+            current = next;
+        }
+        return false;
     }
 
 
