@@ -46,7 +46,23 @@ public class ListTest {
         {
             list.add((int)(Math.random() * 100));
         }
-        
+
     }
+
+    @Test
+    public void CommonStringTest()
+    {
+        MyList<String> list = new MyList<String>();
+        list.add("");
+        list.add("lol");
+        list.add("duck");
+        list.add("karolkaraley158243@rushka.ru");
+
+        assertTrue(list.contains(""));
+        assertTrue(list.contains("duck"));
+        assertFalse(list.contains("cyka"));
+        assertFalse(list.contains(null));
+    }
+
 
 }
