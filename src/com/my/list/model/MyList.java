@@ -50,7 +50,7 @@ public class MyList<T> {
         this.tail = null;
     }
 
-    public boolean containts(T item)
+    public boolean contains(T item)
     {
         Node current = this.head;
 

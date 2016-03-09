@@ -16,8 +16,8 @@ public class ExecutiveClass {
         list.add(20);
         list.add(60);
 
-        System.out.println(list.containts(10));
-        System.out.println(list.containts(50));
+        System.out.println(list.contains(10));
+        System.out.println(list.contains(50));
 
         Iterator iterator = new Iterator(list);
 
