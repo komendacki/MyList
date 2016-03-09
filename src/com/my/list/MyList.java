@@ -10,11 +10,13 @@ public class MyList<T> {
     public MyList()
     {
         this.count = 0;
+        readOnly = false;
     }
 
     private int count;
-    public Node head;
-    public Node tail;
+    private Node head;
+    private Node tail;
+    private boolean readOnly;
 
     public void add(T item)
     {
@@ -46,7 +48,19 @@ public class MyList<T> {
 
     public boolean containts(T item)
     {
-        throw new NotImplementedException();
+        Node current = this.head;
+
+        while (current != null)
+        {
+            if (current.value == item)
+            {
+                return true;
+            }
+
+            current = current.next;
+        }
+        
+        return false;
     }
 
     public void copyTo(T[] array, int arrayIndex)
@@ -56,7 +70,7 @@ public class MyList<T> {
 
     public boolean isReadOnly()
     {
-        throw new NotImplementedException();
+        return this.readOnly;
     }
 
     public boolean remove(T item)
